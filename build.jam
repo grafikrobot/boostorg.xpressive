@@ -29,12 +29,11 @@ constant boost_dependencies :
     /boost/utility//boost_utility ;
 
 project /boost/xpressive
-    : common-requirements
-        <include>include
     ;
 
 explicit
-    [ alias boost_xpressive : : : : <library>$(boost_dependencies) ]
+    [ alias boost_xpressive : : :
+        : <include>include <library>$(boost_dependencies) ]
     [ alias all : boost_xpressive example perf test tools ]
     ;
 
